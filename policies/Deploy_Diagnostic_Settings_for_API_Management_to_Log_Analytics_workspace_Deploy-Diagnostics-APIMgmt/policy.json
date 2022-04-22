@@ -180,7 +180,7 @@
    }
   }
  },
- "id": "/providers/Microsoft.Management/managementGroups/CM/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-APIMgmt",
+ "id": "/providers/Microsoft.Management/managementGroups/LAWPolicy/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-APIMgmt",
  "type": "Microsoft.Authorization/policyDefinitions",
  "name": "Deploy-Diagnostics-APIMgmt"
 }
