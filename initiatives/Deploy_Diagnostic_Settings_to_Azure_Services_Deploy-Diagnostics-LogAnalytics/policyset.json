@@ -1691,7 +1691,7 @@
    }
   ]
  },
- "id": "/providers/Microsoft.Management/managementGroups/CM/providers/Microsoft.Authorization/policySetDefinitions/Deploy-Diagnostics-LogAnalytics",
+ "id": "/providers/Microsoft.Management/managementGroups/LAWPolicy/providers/Microsoft.Authorization/policySetDefinitions/Deploy-Diagnostics-LogAnalytics",
  "type": "Microsoft.Authorization/policySetDefinitions",
  "name": "Deploy-Diagnostics-LogAnalytics"
 }
