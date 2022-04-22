@@ -153,7 +153,7 @@
    }
   }
  },
- "id": "/providers/Microsoft.Management/managementGroups/LAWPolicy/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WebServerFarm",
+ "id": "/providers/Microsoft.Management/managementGroups/CM/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WebServerFarm",
  "type": "Microsoft.Authorization/policyDefinitions",
  "name": "Deploy-Diagnostics-WebServerFarm"
 }
