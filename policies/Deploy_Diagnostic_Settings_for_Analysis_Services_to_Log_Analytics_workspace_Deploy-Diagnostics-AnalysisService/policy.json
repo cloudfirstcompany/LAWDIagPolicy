@@ -184,7 +184,7 @@
    }
   }
  },
- "id": "/providers/Microsoft.Management/managementGroups/LAWPolicy/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-AnalysisService",
+ "id": "/providers/Microsoft.Management/managementGroups/CM/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-AnalysisService",
  "type": "Microsoft.Authorization/policyDefinitions",
  "name": "Deploy-Diagnostics-AnalysisService"
 }
