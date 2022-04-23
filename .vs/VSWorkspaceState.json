@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\policies",
+    "\\policies\\Deploy_Diagnostic_Settings_for_Traffic_Manager_to_Log_Analytics_workspace_Deploy-Diagnostics-TrafficManager",
+    "\\policies\\Deploy_Diagnostic_Settings_for_Virtual_Machines_to_Log_Analytics_workspace_Deploy-Diagnostics-VM",
+    "\\policies\\Deploy_Diagnostic_Settings_for_Virtual_Machine_Scale_Sets_to_Log_Analytics_workspace_Deploy-Diagnostics-VMSS",
+    "\\policies\\Deploy_Diagnostic_Settings_for_Virtual_Network_to_Log_Analytics_workspace_Deploy-Diagnostics-VirtualNetwork",
+    "\\policies\\Deploy_Diagnostic_Settings_for_VPN_Gateway_to_Log_Analytics_workspace_Deploy-Diagnostics-VNetGW",
+    "\\policies\\Deploy_Diagnostic_Settings_for_WVD_Application_group_to_Log_Analytics_workspace_Deploy-Diagnostics-WVDAppGroup",
+    "\\policies\\Deploy_Diagnostic_Settings_for_WVD_Host_Pools_to_Log_Analytics_workspace_Deploy-Diagnostics-WVDHostPools",
+    "\\policies\\Deploy_Diagnostic_Settings_for_WVD_Workspace_to_Log_Analytics_workspace_Deploy-Diagnostics-WVDWorkspace"
+  ],
+  "PreviewInSolutionExplorer": false
+}
