@@ -1,5 +1,5 @@
 
-# file: '.github/workflows/composite/azure-oidc-login/action.yml
+# file: '.github/workflows/composite/action.yml
 name: OIDC Azure Login
 
 inputs:
