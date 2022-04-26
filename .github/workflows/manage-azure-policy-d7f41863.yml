@@ -78,8 +78,11 @@ jobs:
         tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         client_id: ${{ secrets.AZURE_CLIENT_ID }}
         subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-         
-     - paths:
+       - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |   
+    
           initiatives/Deploy_Diagnostic_Settings_to_Azure_Services_Deploy-Diagnostics-LogAnalytics/**
           policies/Deploy_Diagnostic_Settings_for_Automation_to_Log_Analytics_workspace_Deploy-Diagnostics-AA/**
           policies/Deploy_Diagnostic_Settings_for_Container_Instances_to_Log_Analytics_workspace_Deploy-Diagnostics-ACI/**
