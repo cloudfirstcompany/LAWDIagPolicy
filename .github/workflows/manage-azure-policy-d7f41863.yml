@@ -70,7 +70,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Azure Login using OIDC
-      uses: ./.github/workflows/composite/action.yml
+      uses: ./.github/workflows/action.yml
       with:
         tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         client_id: ${{ secrets.AZURE_CLIENT_ID }}
