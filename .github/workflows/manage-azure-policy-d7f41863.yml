@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Azure Login using OIDC
-      uses: ./.github/workflows/composite/azure-oidc-login
+      uses: ./https://github.com/cloudfirstcompany/LAWDIagPolicy/blob/c5084cf0cb29334c8a048376c481dabe43ec93e6/.github/workflows/action.yml
       with:
         tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         client_id: ${{ secrets.AZURE_CLIENT_ID }}
