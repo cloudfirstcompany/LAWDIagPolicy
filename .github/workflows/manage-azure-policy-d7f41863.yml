@@ -1,21 +1,21 @@
-name: manage-azure-policy-d7f41863
+name: OIDC Demo
+
 on:
   workflow_dispatch:
-          
-permissions:
-         id-token: write
 
+permissions:
+  id-token: write
 
 jobs:
+  
   prod:
     name: Deploy to Prod
     runs-on: ubuntu-latest
     environment: prod
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - name: Azure Login using OIDC
-      uses: ./https://github.com/cloudfirstcompany/LAWDIagPolicy/blob/c5084cf0cb29334c8a048376c481dabe43ec93e6/.github/workflows/action.yml
+      uses: ./.github/workflows/
       with:
         tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         client_id: ${{ secrets.AZURE_CLIENT_ID }}
