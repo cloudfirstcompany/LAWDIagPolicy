@@ -67,7 +67,7 @@ permissions:
 jobs:
   apply-azure-policy:
     runs-on: ubuntu-latest
-     environment:LAWDIagPolicy
+     environment:prod
     steps:
     - name: Checkout
       uses: actions/checkout@v2
