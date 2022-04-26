@@ -1,6 +1,10 @@
 name: manage-azure-policy-d7f41863
 on:
   workflow_dispatch:
+  
+  permissions:
+  id-token: write
+  
     inputs:
       remarks:
         description: 'Reason for triggering the workflow run'
@@ -64,8 +68,9 @@ on:
 #      - 'policies/Deploy_Diagnostic_Settings_for_WVD_Workspace_to_Log_Analytics_workspace_Deploy-Diagnostics-WVDWorkspace/**'
 #      - .github/workflows/manage-azure-policy-d7f41863.yml
 jobs:
-  apply-azure-policy:
+  prod:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
     - name: Checkout
       uses: actions/checkout@v2
