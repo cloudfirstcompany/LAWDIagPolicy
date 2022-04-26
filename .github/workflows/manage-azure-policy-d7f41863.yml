@@ -1,8 +1,7 @@
 name: manage-azure-policy-d7f41863
 on:
   workflow_dispatch:
-  
-     inputs:
+    inputs:
       remarks:
         description: 'Reason for triggering the workflow run'
         required: false
