@@ -9,8 +9,9 @@ on:
         default: 'Updating Azure Policies'
         
 permissions:id-token: write
-  jobs:
-  apply-azure-policy:
+
+jobs:
+  name: apply-azure-policy
   runs-on: ubuntu-latest
            environment:LawDiagPolicyEnv
   steps:
