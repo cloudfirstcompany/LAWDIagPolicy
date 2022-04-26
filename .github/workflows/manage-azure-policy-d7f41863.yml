@@ -67,8 +67,7 @@ jobs:
   apply-azure-policy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+ 
     - name: Login to Azure
       uses: azure/login@v1
       with:
