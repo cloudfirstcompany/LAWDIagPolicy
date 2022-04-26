@@ -14,18 +14,16 @@ on:
 
 jobs:
   apply-azure-policy:
-    runs-on: ubuntu-latest
-        environment:LawDiagPolicyEnv
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - - name: Azure Login using OIDC
-      uses: ./.github/workflows/azure-oidc-login.yml
-      with:
+  runs-on: ubuntu-latest
+           environment:LawDiagPolicyEnv
+  steps:
+    - uses: actions/checkout@v2
+    - name: Azure Login using OIDC
+  uses: ./.github/workflows/azure-oidc-login.yml
+  with:
         tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         client_id: ${{ secrets.AZURE_CLIENT_ID }}
         subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }
-        allow-no-subscriptions: true
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:
