@@ -8,11 +8,8 @@ on:
         required: false
         default: 'Updating Azure Policies'
         
-       
-        permissions:id-token: write
-  
-
-jobs:
+permissions:id-token: write
+  jobs:
   apply-azure-policy:
   runs-on: ubuntu-latest
            environment:LawDiagPolicyEnv
