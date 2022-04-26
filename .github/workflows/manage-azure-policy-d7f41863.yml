@@ -69,11 +69,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Login to Azure
-      uses: azure/login@v1
+    - name: Azure Login using OIDC
+      uses: ./.github/workflows/azure-oidc-login.yml
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS_LAW}}
-        allow-no-subscriptions: true
+        tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+        client_id: ${{ secrets.AZURE_CLIENT_ID }}
+        subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID 
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:
