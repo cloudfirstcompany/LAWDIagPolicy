@@ -2,9 +2,14 @@ name: manage-azure-policy-d7f41863
 on:
   workflow_dispatch:
   
-  permissions:
-  id-token: write
-  
+     inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+        
+permissions:
+         id-token: write
 
 ## Uncomment the following if you wish to automatically trigger workflow run with every commit
 #
