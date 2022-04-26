@@ -71,7 +71,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Login to Azure
+  
     - name: Azure Login using OIDC
       uses: ./.github/workflows/
       with:
