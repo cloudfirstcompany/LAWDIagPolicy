@@ -1,19 +1,37 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Download the Git Repo for LAWDiagPolicy-main
+$LAWDiagPolicyMainFolderPoliciesPath = '/home/tony/clouddrive/LawDiagPolicy' #Git Repo local path
+$ManagementGroupName = "2a615ac3-4da2-47f7-8db7-1f3465601504" #Tenant Root Group - Tenant ID
 
-trigger:
-- main
+Connect-AzAccount #Connect AZ as Tenant Admin
 
-pool:
-  vmImage: ubuntu-latest
+$PolicyFolders = Get-childitem -Path "/home/tony/clouddrive/LawDiagPolicy"  #Get all Policy Folder Names
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+$PoliciesToImport = @() #Final Table for all required information to import policies
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+foreach ($PolicyFolder in $PolicyFolders) {
+    $PolicyDefinitionJsonPath = (Get-Childitem $PolicyFolder.FullName).FullName #Get the Policy json file full path
+
+    $PolicyDefinitionID = $PolicyDefinition.id -split "/" | Select-Object -Last 1 #Set the Policy Definition ID as Name
+    $PolicyDefinitionDetails = [PSCustomObject] @{
+        Name = $PolicyDefinitionID
+        Policy = $PolicyDefinitionJsonPath
+    }
+    $PoliciesToImport += $PolicyDefinitionDetails #Add to the list of Policies that will be imported
+}
+
+# Import Policies
+foreach ($PolicyToImport in $PoliciesToImport)
+{
+    Write-Host "Policy Name: $($PolicyToImport.Name)"
+    try { 
+        Write-Host "Policy Path: $($PolicyToImport.Policy)"
+        New-AzPolicyDefinition -Name $PolicyToImport.Name -Policy $PolicyToImport.Policy -ManagementGroupName "2a615ac3-4da2-47f7-8db7-1f3465601504"
+        Write-Host -ForegroundColor Green "$($PolicyToImport.Name) successfully imported"
+    }
+    catch {
+        Write-Host -ForegroundColor Red "$($PolicyToImport.Name) failed to import"
+    }
+    Write-Host "------------------"
+    Start-Sleep -seconds 3 #Add 3 seconds delay between calls to create new policy definition
+}
+
